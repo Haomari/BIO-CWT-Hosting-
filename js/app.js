@@ -8266,6 +8266,8 @@
                 }));
             }
         }), 0);
+        let n = location.href;
+        if (n.includes(".html")) location = "404";
         function highlightCurrent() {
             const curPage = document.URL;
             const links = document.getElementsByTagName("a");

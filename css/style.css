@@ -221,9 +221,6 @@ body {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
   padding: 0.6875rem 4.375rem;
 }
 
@@ -1050,12 +1047,51 @@ th {
       -ms-transform: 0px, 0px, 0px;
           transform: 0px, 0px, 0px;
   /* 		&::after{
-  			content: '';
-  			position: absolute;width: 100%;height: 100%;top: 0;left: 0;
-  			@include adaptiveValue("border-radius", 42, 14);
-  			overflow: hidden;
-  			pointer-events: none;
-  		} */
+  	content: '';
+  	position: absolute;width: 100%;height: 100%;top: 0;left: 0;
+  	@include adaptiveValue("border-radius", 42, 14);
+  	overflow: hidden;
+  	pointer-events: none;
+  } */
+}
+
+.e404_container {
+  position: relative;
+}
+
+.e404__container {
+  text-align: center;
+}
+
+.e404__image img {
+  max-width: 100%;
+  width: 60%;
+}
+
+.e404__text {
+  line-height: 1.2;
+  color: #FFDBBB;
+}
+
+.e404__decor {
+  height: 160%;
+  width: 83.3333333333%;
+}
+
+.e404__decor::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(34, 32, 33, 0.65);
+  border-radius: 0.6875rem 3.4375rem 3.4375rem 0.6875rem;
+}
+
+.e404__decor img {
+  max-height: 100%;
+  border-radius: 0.6875rem 3.4375rem 3.4375rem 0.6875rem;
 }
 
 .swiper {
@@ -2201,6 +2237,10 @@ button.swiper-pagination-bullet {
     margin-left: 7.625rem;
   }
 
+  .contact__body {
+    margin-left: 8.4375rem;
+  }
+
   .contact__map-body {
     width: 30.8125rem;
   }
@@ -2537,6 +2577,18 @@ button.swiper-pagination-bullet {
 
   .contact__map-body iframe {
     border-radius: 2.625rem;
+  }
+
+  .e404__image {
+    padding-top: 10.1875rem;
+  }
+
+  .e404__title:not(:last-child) {
+    margin-bottom: 2.3125rem;
+  }
+
+  .e404__text:not(:last-child) {
+    margin-bottom: 2.625rem;
   }
 }
 
@@ -2947,6 +2999,18 @@ button.swiper-pagination-bullet {
   .contact__map-body iframe {
     border-radius: 0.875rem;
   }
+
+  .e404__image {
+    padding-top: 3.125rem;
+  }
+
+  .e404__title:not(:last-child) {
+    margin-bottom: 0.9375rem;
+  }
+
+  .e404__text:not(:last-child) {
+    margin-bottom: 1rem;
+  }
 }
 
 @media (max-width: 47.99875em) {
@@ -3288,6 +3352,12 @@ button.swiper-pagination-bullet {
   }
 }
 
+@media (max-width: 47.9875em) {
+  .contact__body {
+    margin-left: 0.0000000625rem;
+  }
+}
+
 @media (max-width: 29.99875em) {
   .form__button {
     width: 100%;
@@ -3308,6 +3378,11 @@ button.swiper-pagination-bullet {
   }
 
   .advantages__button {
+    width: 100%;
+    padding: 0.6875rem 0rem;
+  }
+
+  .e404__button {
     width: 100%;
     padding: 0.6875rem 0rem;
   }
@@ -4385,6 +4460,42 @@ button.swiper-pagination-bullet {
       border-radius: calc(0.875rem + 1.75 * (100vw - 20rem) / 60);
     }
 }
+
+@supports (padding-top: clamp( 3.125rem , 0.7708333333rem  +  11.7708333333vw , 10.1875rem )) {
+    .e404__image {
+      padding-top: clamp( 3.125rem , 0.7708333333rem  +  11.7708333333vw , 10.1875rem );
+    }
+}
+
+@supports not (padding-top: clamp( 3.125rem , 0.7708333333rem  +  11.7708333333vw , 10.1875rem )) {
+    .e404__image {
+      padding-top: calc(3.125rem + 7.0625 * (100vw - 20rem) / 60);
+    }
+}
+
+@supports (margin-bottom: clamp( 0.9375rem , 0.4791666667rem  +  2.2916666667vw , 2.3125rem )) {
+    .e404__title:not(:last-child) {
+      margin-bottom: clamp( 0.9375rem , 0.4791666667rem  +  2.2916666667vw , 2.3125rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 0.9375rem , 0.4791666667rem  +  2.2916666667vw , 2.3125rem )) {
+    .e404__title:not(:last-child) {
+      margin-bottom: calc(0.9375rem + 1.375 * (100vw - 20rem) / 60);
+    }
+}
+
+@supports (margin-bottom: clamp( 1rem , 0.4583333333rem  +  2.7083333333vw , 2.625rem )) {
+    .e404__text:not(:last-child) {
+      margin-bottom: clamp( 1rem , 0.4583333333rem  +  2.7083333333vw , 2.625rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 1rem , 0.4583333333rem  +  2.7083333333vw , 2.625rem )) {
+    .e404__text:not(:last-child) {
+      margin-bottom: calc(1rem + 1.625 * (100vw - 20rem) / 60);
+    }
+}
 }
 
 @media (min-width: 47.99875em) and (max-width: 90em) {
@@ -4813,6 +4924,32 @@ button.swiper-pagination-bullet {
 }
 }
 
+@media (min-width: 47.9875em) and (max-width: 78.125em) {
+@supports (margin-left: clamp( 0.0000000625rem , -13.4349075526rem  +  27.9966816674vw , 8.4375rem )) {
+    .contact__body {
+      margin-left: clamp( 0.0000000625rem , -13.4349075526rem  +  27.9966816674vw , 8.4375rem );
+    }
+}
+
+@supports not (margin-left: clamp( 0.0000000625rem , -13.4349075526rem  +  27.9966816674vw , 8.4375rem )) {
+    .contact__body {
+      margin-left: calc(0.0000000625rem + 8.4374999375 * (100vw - 47.9875rem) / 30.1375);
+    }
+}
+
+@supports (width: clamp( 23.75rem , 12.5044846537rem  +  23.4342596433vw , 30.8125rem )) {
+    .contact__map-body {
+      width: clamp( 23.75rem , 12.5044846537rem  +  23.4342596433vw , 30.8125rem );
+    }
+}
+
+@supports not (width: clamp( 23.75rem , 12.5044846537rem  +  23.4342596433vw , 30.8125rem )) {
+    .contact__map-body {
+      width: calc(23.75rem + 7.0625 * (100vw - 47.9875rem) / 30.1375);
+    }
+}
+}
+
 @media (min-width: 20em) and (max-width: 47.9875em) {
 @supports (margin-bottom: clamp( 2.5rem , 0.7134881644rem  +  8.9325591782vw , 5rem )) {
     .contact__find-us {
@@ -4823,20 +4960,6 @@ button.swiper-pagination-bullet {
 @supports not (margin-bottom: clamp( 2.5rem , 0.7134881644rem  +  8.9325591782vw , 5rem )) {
     .contact__find-us {
       margin-bottom: calc(2.5rem + 2.5 * (100vw - 20rem) / 27.9875);
-    }
-}
-}
-
-@media (min-width: 47.9875em) and (max-width: 78.125em) {
-@supports (width: clamp( 23.75rem , 12.5044846537rem  +  23.4342596433vw , 30.8125rem )) {
-    .contact__map-body {
-      width: clamp( 23.75rem , 12.5044846537rem  +  23.4342596433vw , 30.8125rem );
-    }
-}
-
-@supports not (width: clamp( 23.75rem , 12.5044846537rem  +  23.4342596433vw , 30.8125rem )) {
-    .contact__map-body {
-      width: calc(23.75rem + 7.0625 * (100vw - 47.9875rem) / 30.1375);
     }
 }
 }
